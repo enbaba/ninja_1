@@ -1,0 +1,23 @@
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\userswithtemplates>python manage.py makemigrations
+Migrations for 'app1':
+  app1\migrations\0001_initial.py
+    - Create model User
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\userswithtemplates>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, app1, auth, contenttypes, sessions
+Running migrations:
+  Applying app1.0001_initial... OK
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\userswithtemplates>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app1.models import*
+>>> User.objects.create(first_name='elenor',last_name='shellstrop',age=30)
+<User: User object (1)>
+>>> User.objects.create(first_name='chidi',last_name='anagonye',age=32)
+<User: User object (2)>
+>>> User.objects.create(first_name='jason',last_name='mendoza',age=24)
+<User: User object (3)>
+>>>

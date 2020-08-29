@@ -1,0 +1,23 @@
+*{
+   outline-width: 1px,solid,white; 
+}
+.wrapper{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+}
+.header{
+    padding: 5px;
+    text-align: center;
+    background-color: aliceblue;
+
+}
+.header h1{
+    vertical-align: middle;
+
+}
+.header h2{
+    vertical-align: middle;
+    
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Userswithtemplates</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <Div class="wrapper"></Div>
+    <div class="header"></div>
+    <h1>Alltheusers</h1>
+    <table>
+     <thead>
+     <tr>
+     <th>firstname</th>
+     <th>lastname</th>
+     <th>email</th>
+     <th>age</th>
+     </thead>
+    
+       <tbody>
+          <div> 
+        
+               <tr>
+                   <td>Elenor</td>
+                   <td>Shellstrop</td>
+                   <td>elenor@yahoo.com</td>
+                   <td>30</td>
+               </tr>
+                <tr>
+                   <td>Chidi</td>
+                   <td>Anagonye</td>
+                   <td>chidi@yahoo.com</td>
+                   <td>32</td>
+               </tr>
+              <tr>
+                <td>Jason</td>
+                <td>Mendoza</td>
+                <td>jason@yahoo.com</td>
+                <td>29</td>
+              </tr>
+            </div>
+            <h2>Add a user</h2>
+          
+            <form>
+                <label for="firstname"></label>
+                <input id="FirstName"type="text" name="firstname">
+                <label for="lastname"></label>
+                <input id="LastName"type="text" name="lastname">
+                <label for="email"></label>
+                <input id="email"type="text" name="email">
+                <label for="age"></label>
+                <input id="age"type="text" name="age">
+
+            </form>
+        </tbody>
+    </table>
+</body>
+</html>
+         

@@ -1,0 +1,11 @@
+*{
+    outline-color: 1px solid red ;
+}
+.container{
+    width:580px;
+    height: 550px;
+    text-align: center;
+    padding: 10px;
+    border:5px solid rgb(255, 240, 252);
+    
+}

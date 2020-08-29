@@ -1,0 +1,24 @@
+ import bcrypt
+>>> password= "cat"
+>>> hashedpassword= bcrypt.hashpasbcrypt.hashpw('test'.encode(), bcrypt.gensalt()).decode(sword
+... )
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: module 'bcrypt' has no attribute 'hashpasbcrypt'
+>>> hashpassword= bcrypt.hashpw("cat".encode(),bcrypt.gensalt()).decode()
+>>> hashpassword
+'$2b$12$JluLOftkkMNR4uK3WortFuUFNRhYdKJ7085E7tWG4a7YVAq7TGCw6'
+>>> user1= User.objects.create(email='andrrew@yahoo.com')
+>>> user1
+<User:  >
+>>> user1.first_name='luwi'
+>>> user1.last_name='henry'
+>>> user1.password=hashedpassword
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'hashedpassword' is not defined
+>>> user1.password=hashpassword
+>>> user1.save()
+>>> user1
+<User: luwi henry>
+>>>

@@ -1,0 +1,14 @@
+*{
+    outline-color: 1px solid white;
+}
+
+.container{
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+}
+.h3{
+    padding:20px;
+    height: 50px;
+    margin: 20px;
+}

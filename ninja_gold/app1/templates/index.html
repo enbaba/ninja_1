@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ninjagold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <h1>ninjagold</h1>
+    <a href="/reset"><button>Reset</button></a>
+    <h2>yourgold {{request.session.gold}}</h2>
+   
+    <div container>
+        <div>
+          <h1>Farm</h1>
+               <p>(earns 10-20 golds)</p>
+               <form action="/gold" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="building" value="Farm">
+                  <button>Find Gold!</button>
+               </form>
+        </div>
+        <div>
+            <h1>cave</h1>
+               <p>(earns 5-10 golds)</p>
+               <form action="/gold" method="post">
+                         {% csrf_token %}
+                         <input type="hidden" name="building" value="Cave">
+                         <button>Find Gold!</button>
+               </form>
+        </div>
+        <div>
+            <h1>house</h1>
+               <p>(earns 2-5 golds)</p>
+               <form action="/gold" method="post">
+                         {% csrf_token %}
+                         <input type="hidden" name="building" value="House">
+                         <button>Find Gold!</button>
+               </form>
+        </div>
+        <div>
+            <h1>casino</h1>
+               <p>(earns 10-20 golds)</p>
+               <form action="/gold" method="post">
+                         {% csrf_token %}
+                         <input type="hidden" name="building" value="Casino">
+                         <button>Find Gold!</button>
+               </form>
+
+        </div>
+
+    </div> 
+    {{request.session.activities}}
+</body>
+</html>

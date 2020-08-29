@@ -1,0 +1,261 @@
+Microsoft Windows [Version 10.0.17763.973]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\enbaba>cd Desktop/codingdojo/virtualenv
+
+C:\Users\enbaba\Desktop\codingdojo\virtualenv>call virtualenv1\Scripts\activate
+
+(virtualenv1) C:\Users\enbaba\Desktop\codingdojo\virtualenv>cd ..\..\Assignments
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>django-admin startproject user1
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>cd user1
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>python manage.py startapp app1
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>code .
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>python manage.py makemigrations
+No changes detected
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>python manage.py makemigrations
+Migrations for 'app1':
+  app1\migrations\0001_initial.py
+    - Create model User
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, app1, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying app1.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>from app1.models import*
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\user1>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app1.models import*
+>>> user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>>  User.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+  File "<console>", line 1
+    User.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+    ^
+IndentationError: unexpected indent
+>>> user1.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>> User1.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User1' is not defined
+>>> user1.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>>
+>>>
+>>>  user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+  File "<console>", line 1
+    user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+    ^
+IndentationError: unexpected indent
+>>> from app1.models import*
+>>>
+>>> user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>>  user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+  File "<console>", line 1
+    user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+    ^
+IndentationError: unexpected indent
+>>> user.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> User.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>> user.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> user1.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>> User.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>> from app1.models import*
+>>>
+>>>  user1.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+  File "<console>", line 1
+    user1.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+    ^
+IndentationError: unexpected indent
+>>>
+>>> use.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'use' is not defined
+>>> from app1.models import user
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: cannot import name 'user' from 'app1.models' (C:\Users\enbaba\Desktop\Assignments\user1\app1\models.py)
+>>> from app1.models import user
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: cannot import name 'user' from 'app1.models' (C:\Users\enbaba\Desktop\Assignments\user1\app1\models.py)
+>>> User.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>>  from app1.models import*
+  File "<console>", line 1
+    from app1.models import*
+    ^
+IndentationError: unexpected indent
+>>>  from app1.models import*
+  File "<console>", line 1
+    from app1.models import*
+    ^
+IndentationError: unexpected indent
+>>> from app1.models import*
+>>> User.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>> from app1.models import*
+>>> User.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>> from app1.models import*
+>>> User.objects.create(first_name="lilly",last_name="john",email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'lilly' is not defined
+>>> user1.objects.create(first_name='lilly',last_name='john',email=lilly@gmail.com,age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>> user1.objects.create(first_name='lilly',last_name='john',email='lilly@gmail.com',age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>> from app1.models import*
+>>> User1.objects.create(first_name='lilly',last_name='john',email='lilly@gmail.com',age=25)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User1' is not defined
+>>> User.objects.create(first_name='lilly',last_name='john',email='lilly@gmail.com',age=25))
+  File "<console>", line 1
+    User.objects.create(first_name='lilly',last_name='john',email='lilly@gmail.com',age=25))
+                                                                                           ^
+SyntaxError: unmatched ')'
+>>> user1=User.objects.create(first_name='lilly',last_name='john',email='lilly@gmail.com',age=25)
+>>> user1=User.objects.create(first_name='sally',last_name='henry',email='sally@gmail.com,age=25)
+  File "<console>", line 1
+    user1=User.objects.create(first_name='sally',last_name='henry',email='sally@gmail.com,age=25)
+                                                                                                ^
+SyntaxError: EOL while scanning string literal
+>>>  user1=User.objects.create(first_name='sally',last_name='henry',email='sally@gmail.com',age=25)
+  File "<console>", line 1
+    user1=User.objects.create(first_name='sally',last_name='henry',email='sally@gmail.com',age=25)
+    ^
+IndentationError: unexpected indent
+>>> user1=User.objects.create(first_name='sally',last_name='henry',email='sally@gmail.com',age=23)
+>>> user1=User.objects.create(first_name='ana',last_name='jim',email=ana@gmail.com',age=21)
+  File "<console>", line 1
+    user1=User.objects.create(first_name='ana',last_name='jim',email=ana@gmail.com',age=21)
+                                                                                          ^
+SyntaxError: EOL while scanning string literal
+>>>  user1=User.objects.create(first_name='ana',last_name='jim',email='ana@gmail.com',age=21)
+  File "<console>", line 1
+    user1=User.objects.create(first_name='ana',last_name='jim',email='ana@gmail.com',age=21)
+    ^
+IndentationError: unexpected indent
+>>> user1=User.objects.create9first_name='ana',last_name='jim',email='ana@gmail.com',age=23)
+  File "<console>", line 1
+    user1=User.objects.create9first_name='ana',last_name='jim',email='ana@gmail.com',age=23)
+                                                                                           ^
+SyntaxError: unmatched ')'
+>>> user1=User.objects.create(first_name='ana',last_name='jim',email='ana@gmail.com',age=23)
+>>> user.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> user1=user.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> user.objects.get(all)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> User.object.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'object'
+>>>  user.objects.get()
+  File "<console>", line 1
+    user.objects.get()
+    ^
+IndentationError: unexpected indent
+>>> user.objects.get()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>]>
+>>> User.objects.get(first_name='ana')
+<User: User object (3)>
+>>> User.objects.get(first_name='lilly')
+<User: User object (1)>
+>>> User_3=User.objects.get(id=3)
+>>> User_3.last_name='pancakes'
+>>> User_3.save()
+>>> User_2=User.objects.get(id=2)
+>>> User_2.delete()
+(1, {'app1.User': 1})
+>>> User.objects.order_by('first_name')
+<QuerySet [<User: User object (3)>, <User: User object (1)>]>
+>>> User.objects.order_by('-first_name')
+<QuerySet [<User: User object (1)>, <User: User object (3)>]>
+>>>
+
+
+
+
+
+
+
+

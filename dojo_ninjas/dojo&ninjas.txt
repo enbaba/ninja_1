@@ -1,0 +1,193 @@
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\enbaba>cd Desktop/codingdojo/virtualenv
+
+C:\Users\enbaba\Desktop\codingdojo\virtualenv>call virtualenv1\Scripts\activate
+
+(virtualenv1) C:\Users\enbaba\Desktop\codingdojo\virtualenv>cd ..\..\Assignments
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>django-admin startproject dojo&ninjas
+CommandError: 'C:\Users\enbaba\Desktop\Assignments\dojo' already exists
+'ninjas' is not recognized as an internal or external command,
+operable program or batch file.
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>django-admin startproject dojo_ninjas
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>cd dojo_ninjas
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 27, 2020 - 17:07:32
+Django version 2.2, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py makemigrations
+No changes detected
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>
+KeyboardInterrupt
+>>> quit()
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>code .
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> quit()
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py startapp app1
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>code .
+
+
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py makemigrations
+Migrations for 'app1':
+  app1\migrations\0001_initial.py
+    - Create model Dojo
+    - Create model Ninja
+
+
+Django version 2.2, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> from app1.models import*
+>>> user1= Dojo.objects.create(name="coding dojo",location="seattle")
+>>> user2= Dojo.objects.create(name="coding dojo,location=los angols")
+>>> user3= Dojo.objects.create(name="coding dojo",location="san jose")
+>>> user_to_delete.delete()
+
+>>> dojo= Dojo.objects.get(id=1)
+>>> dojo.delete()
+(1, {'app1.Dojo': 1})
+>>> dojo= Dojo.objects.create(name="coding dojo",location="manassas")
+>>> dojo= Dojo.objects.create(name="coding dojo",location="arlington")
+>>> dojo= Dojo.objects.create(name="coding dojo".location="dc")
+  File "<console>", line 1
+    dojo= Dojo.objects.create(name="coding dojo".location="dc")
+                                                         ^
+SyntaxError: invalid syntax
+>>> dojo= Dojo.objects.create(name="coding dojo",location="dc")
+>>> ninja= Ninja.objects.create(first_name="lilly",last_name="john",email="lilly@gmail.com",dojo="manassas"age=30)
+  File "<console>", line 1
+    ninja= Ninja.objects.create(first_name="lilly",last_name="john",email="lilly@gmail.com",dojo="manassas"age=30)
+                                                                                                           ^
+
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: Dojo object (2)>, <Dojo: Dojo object (3)>, <Dojo: Dojo object (4)>, <Dojo: Dojo object (5)>, <Dojo: Dojo object (6)>]>
+>>> Ninja.objects.all()
+<QuerySet []>
+>>> Dojo.objects.all().delete()
+(5, {'app1.Dojo': 5})
+>>> Dojo.objects.all()
+<QuerySet []>
+>>> Ninja.objects.delete()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'delete'
+>>> quit()
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py makemigrations
+Migrations for 'app1':
+  app1\migrations\0002_auto_20200827_1835.py
+    - Create model Ninjas
+    - Delete model Ninja
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> dojo= Dojo.objects.create(name="coding dojo",location="san jose",email="coding@dojo.com")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojo' is not defined
+>>> from app1.models import*
+>>> dojo= Dojo.objects.create(name="coding dojo",location="san jose",email="coding@dojo.com")
+>>> ninja= Ninja.objects.create(first_name="lilly",last_name="john",email="lilly@coding.dojo",dojo=dojo,age=28)
+
+>>> ninja= Ninjas.objects.create(first_name="lilly",last_name="john",email="lilly@coding.dojo",dojo=dojo,age=28)
+>>> dojo2= Dojo.objects.create(name="coding dojo",location="san rosa",email="coding@dojo.com")
+>>> dojo3= Dojo.objects.create(name="coding dojo",location="santa clara",email="coding@dojo.com")
+>>> dojo4= Dojo.objects.create(name="coding dojo",location="santa monica",email="coding@dojo.com")
+>>> ninja1= Ninjas.objects.create(first_name="sailly",last_name="john",email="sailly@coding.dojo",dojo=dojo2,age=18)
+>>> ninja2= Ninjas.objects.create(first_name="lally",last_name="john",email="lally@coding.dojo",dojo=dojo2,age=38)
+>>> ninja3= Ninjas.objects.create(first_name="sam",last_name="peter",email="sam@coding.dojo",dojo=dojo2,age=20)
+>>> ninja4= Ninjas.objects.create(first_name="fam",last_name="peter",email="fam@coding.dojo",dojo=dojo3,age=20)
+>>> ninja5= Ninjas.objects.create(first_name="lum",last_name="peter",email="lum@coding.dojo",dojo=dojo3,age=30)
+>>> ninja6= Ninjas.objects.create(first_name="kum",last_name="peter",email="kum@coding.dojo",dojo=dojo3,age=30)
+>>> ninja5= Ninjas.objects.create(first_name="lum",last_name="peter",email="lum@coding.dojo",dojo=dojo3,age=30)
+>>> ninja5= Ninjas.objects.create(first_name="lum",last_name="peter",email="lum@coding.dojo",dojo=dojo3,age=30)
+>>> ninja7= Ninjas.objects.create(first_name="lully",last_name="han",email="lum@coding.dojo",dojo=dojo4,age=30)
+>>> ninja8= Ninjas.objects.create(first_name="gim",last_name="han",email="gim@coding.dojo",dojo=dojo4,age=30)
+>>> ninja9= Ninjas.objects.create(first_name="dan",last_name="han",email="dan@coding.dojo",dojo=dojo4,age=30)
+>>> Ninjas.objects.filter(ninjas="dojo2")
+
+
+>>> Ninjas.objects.filter(first_name="lilly",last_name="john",email="lilly@coding.dojo",dojo=dojo2,age=28)
+<QuerySet []>
+>>> Ninjas.objects.filter(dojo=dojo2)
+<QuerySet [<Ninjas: Ninjas object (2)>, <Ninjas: Ninjas object (3)>, <Ninjas: Ninjas object (4)>]>
+>>> Ninjas.objects.filter(dojo=dojo4)
+<QuerySet [<Ninjas: Ninjas object (10)>, <Ninjas: Ninjas object (11)>, <Ninjas: Ninjas object (12)>]>
+>>> Ninjas.objects.filter(dojo=ninja9)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  
+NameError: name 'Ninjas9' is not defined
+>>> ninja9.dojo
+<Dojo: Dojo object (10)>
+>>> ninja9.dojo.dan
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'dan'
+>>> ninja9.dojo.name
+'coding dojo'
+>>> ninja9.dojo.location
+'santa monica'
+>>> newly_created_movie = Movie.objects.create(title="The Princess Bride",description="the best movie ever",release_date="1987-09-25",duration=98)
+Traceback (most recent call last):
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\dojo_ninjas>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app1.models import*
+>>> dojo= Dojo.objects.create(name="dojo",location="fairfax")

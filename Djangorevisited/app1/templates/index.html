@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dojosurvey2</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">   
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>register</h1>
+            <!-- <form action='/process' method='post'>
+                {% csrf_token %} 
+                <label for="first_name">First name:</label>
+                <input type="text" id="first_name" name="first_name" class="form-control">
+                <br>
+                <label for="last_name">Last name:</label>
+                <input type="text" id="last_name" name="last_name" class="form-control">
+                <br>
+                <label for="dojo_location">Dojo location:</label>
+                <input type="text" id="dojo_location" name="dojo_location" class="form-control">
+                <br>
+                <label for="favorite language">Favorite language</label>
+                <input type="text" name="favorite_language" id="" class="form-control">
+                <br>
+                <label for="comment">Comment:</label>
+                <input type="comment" name="comment" id="comment" class="form-control">
+                <button type="submit">Submitting the form</button>
+                
+    
+            </form> -->
+            <form class="form_items" action="/process" method="POST">
+                {% csrf_token %}
+                Name: <input class="form-control" type="text" name="name" >
+                <br>
+                Languages: <select class="form-control" name="language">
+                    <option value="python">Python</option>
+                    <option value="c#">C#</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="c">C</option>
+                </select>
+                <br>
+                Locations: <select class="form-control" name="location">
+                    <option value="burbank">Burbank</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="dallas">Dallas</option>
+                    <option value="seattle">Seattle</option>
+                    <option value="dc">DC</option>
+                </select>
+                <br>
+                <textarea class="form-control" rows="4" cols="50" name="comment" placeholder="comment here..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+                
+        
+        </div>
+    </div>
+   
+    
+</body>
+</html>

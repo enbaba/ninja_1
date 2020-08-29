@@ -1,0 +1,59 @@
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\Amadon>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app1.models import*
+>>> product1= Product.objects.create(description= "toys", price= 10)
+
+>>> product2= Product.objects.create(description= "books", price=25)
+
+>>> exit()
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\Amadon>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2020 - 17:45:33
+Django version 2.2, using settings 'Amadon.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[23/Jul/2020 17:45:37] "GET / HTTP/1.1" 200 2272
+[23/Jul/2020 17:45:37] "GET /static/poorly_coded_store/css/bootstrap.css HTTP/1.1" 404 1732
+[23/Jul/2020 17:45:39] "GET / HTTP/1.1" 200 2272
+[23/Jul/2020 17:45:39] "GET /static/poorly_coded_store/css/bootstrap.css HTTP/1.1" 404 1732
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

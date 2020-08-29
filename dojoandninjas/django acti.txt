@@ -1,0 +1,26 @@
+.\my_environments\py3Env\Scripts\activate
+
+*********************************
+To create virtual environment(you dont need it):
+	Step 1. phisically navigate to folder where you want this env to be installed and creaste and name this folder(for all of your envs)
+	Step 2. Open command line
+	Step 3. From your home directory navigate to virt envs folder
+		cd Desktop/codingdojo/virtualenv
+	Step 4. Create virt env
+		python -m venv virtualenv1
+	After step 4, you will see banana folder appears inside of your Step1 folder
+
+
+To activate virtual environment:
+	Step 1. Open command line
+	Step 2. navigating to you virt evvs folder(where you keep all of them):
+		cd Desktop/codingdojo/virtualenv
+	Step 3. Run this command to activate ve:
+		call virtualenv1\Scripts\activate
+								If you need to deactivate it:
+								deactivate
+
+	Step 4.	cd ..\..\Assignments    - goint to Assignments folder on your Desktop
+	Step 5. django-admin startproject projectName
+	step 6. cd projectName     - going inside of your project folder, because inside of this folder you need to create app (see step 7):
+	step 7. python manage.py startapp appName   - by this commant you creating app

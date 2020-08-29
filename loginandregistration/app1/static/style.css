@@ -1,0 +1,33 @@
+/* *{
+    outline-color:1px,solid bisque;
+}
+.container{
+    width: 600px;
+    padding: 10px;
+    display: flex;
+    height: 100px;
+    width: 90%;
+}
+
+.header{
+    padding: 10px;
+    height: 30px;
+}
+.header h1{
+   
+    vertical-align: middle;
+}
+.header h2{
+    display: inline-block;
+    vertical-align: middle;
+}
+.register{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+.login{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+} */

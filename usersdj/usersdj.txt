@@ -1,0 +1,85 @@
+Microsoft Windows [Version 10.0.17763.973]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\enbaba>cd Desktop/codingdojo/virtualenv
+
+C:\Users\enbaba\Desktop\codingdojo\virtualenv>call virtualenv1\Scripts\activate
+
+(virtualenv1) C:\Users\enbaba\Desktop\codingdojo\virtualenv>cd ..\..\Assignments
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>django-admin startproject usersdj
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments>cd usersdj
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\usersdj>python manage.py startapp app1
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\usersdj>code .
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\usersdj>python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\enbaba\Desktop\codingdojo\virtualenv\virtualenv1\lib\site-packages\django\core\management\__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\enbaba\Desktop\codingdojo\virtualenv\virtualenv1\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\enbaba\Desktop\codingdojo\virtualenv\virtualenv1\lib\site-packages\django\core\management\base.py", line 323, in run_from_argv
+    self.execute(*args, **cmd_options)
+  
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\usersdj>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+(virtualenv1) C:\Users\enbaba\Desktop\Assignments\usersdj>python manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app1.models import*
+>>> Users.objects.create(first_name='lilly', last_name='yoni',email=yoni@gmail.com,age='30')
+
+>>>
+>>> from app1.models import*
+>>> user2= Users.objects.create(first_name="lilly",last_name="yoni",email=yoni@gmail.com,age=30)
+
+>>> user1=Users.objects.filter(first_name="lilly",last_name="yoni",email="lilly@gmail.com",age=30)
+>>> user2=Users.objects.filter(first_name="sami",last_name="dani",email="sami@gmail.com",age=28)
+>>> user2=Users.objects.filter(first_name="sami",last_name="dani",email="sami@gmail.com",age=28)
+>>> Users.objects.all()
+<QuerySet [<Users: Users object (1)>, <Users: Users object (2)>, <Users: Users object (3)>]>
+>>> Users.objects.filter(id=1)
+<QuerySet [<Users: Users object (1)>]>
+>>> Users.objects.filter(id=3)
+<QuerySet [<Users: Users object (3)>]>
+>>> Users.abjects.get(id=3)
+
+>>>
+>>> user_to_delete = Users.objects.get(id=2)
+>>> user_to_delete.delete()
+(1, {'app1.Users': 1})
+
+app1.models.Users.DoesNotExist: Users matching query does not exist.
+>>> user_to_delete.delete()
+(0, {'app1.Users': 0})
+>>> Users.objects.all().order_by("first_name")
+<QuerySet [<Users: Users object (1)>, <Users: Users object (3)>]>
+
